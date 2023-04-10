@@ -17,3 +17,5 @@ No (barely).
 ## Important:
 
 This Web app requires MongoDB (MongoDB Compass). Please modify "mongoose.connect" to your MongoDB connection URI. Use "npm i" and "nodemon index".js to start the web app. If crash, please delete node_modules folder then "npm i" to reinstall dependencies. (bcrypt causes the problem. I am using intel chip version so you might need to reinstall it to solve the problem)
+
+Web app walk through(no sound):https://drive.google.com/file/d/1mv1IMeX_ACH25zpSsdQ496TClNqKrYcJ/view?usp=sharing
