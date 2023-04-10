@@ -1,0 +1,38 @@
+<html>
+
+<head>
+  <title>User Lable Website</title>
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+
+<body>
+  <div class="flashes">
+    <% if (flashMessages) { %> <% if (flashMessages.success) { %>
+    <div class="flash success"><%= flashMessages.success %></div>
+    <%} else if (flashMessages.error){ %>
+    <div class="flash error"><%= flashMessages.error %></div>
+    <%} %> <%} %>
+  </div>
+
+  <% if (loggedIn) { %> Logged in as
+  <a href="<%=`/users/${currentUser._id}`%>"> <%= currentUser.fullName %></a>
+  <div class="user-labels">
+    <p>Labels of Current User:</p>
+    <ul>
+      <% currentUser.labels.forEach((label) => { %>
+      <li><%= label %></li>
+      <% }); %>
+    </ul>
+  </div>
+  <a href="/users/logout">Log out</a>
+  <%} else {%>
+  <a href="/users/new">Sign Up</a>
+  <a href="/users/login">Log In</a>
+  <% } %>
+
+
+  <%- body%>
+
+</body>
+
+</html>

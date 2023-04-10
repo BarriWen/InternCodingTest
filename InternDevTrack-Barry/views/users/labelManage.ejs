@@ -1,0 +1,27 @@
+<div class="lable-manage">
+  <h2>Manage Labels</h2>
+  <form method="POST" action="/users/<%= user._id %>/labels">
+    <label for="new-label">Add a Label:</label>
+    <input type="text" name="label" id="new-label" />
+    <button type="submit">Add Label</button>
+  </form>
+
+  <ul>
+    <% user.labels.forEach((label, index) => { %>
+    <li>
+      <%= label %>
+      <form method="POST"
+          action="/users/<%= user._id %>/labels/<%= index %>?_method=PUT"
+          style="display:inline;">
+        <input type="text" name="label" />
+        <button type="submit">Edit</button>
+      </form>
+      <form method="POST"
+          action="/users/<%= user._id %>/labels/<%= index %>?_method=DELETE"
+          style="display:inline;">
+        <button type="submit">Delete</button>
+      </form>
+    </li>
+    <% }); %>
+  </ul>
+</div>
